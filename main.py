@@ -11,7 +11,6 @@ from search import PokeSearch
 app = Flask(__name__)
 
 
-
 class PokeForm(Form):
     style={'style': 'font-size: 12px'}
     searchresult = StringField("Search for a pokemon: ", default="ditto")
