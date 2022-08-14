@@ -8,7 +8,8 @@ from flask import Flask, render_template, request
 from wtforms import Form, StringField, SubmitField, validators
 from search import PokeSearch
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="static")
+
 
 
 class PokeForm(Form):
@@ -19,6 +20,7 @@ class HomePage(MethodView):
 
     @app.route("/", methods=["GET", "POST"])
     def get():
+
         poke_form = PokeForm(request.form)
         newpoke = poke_form.searchresult.data
         retrieve_search = PokeSearch(newpoke)
@@ -32,13 +34,14 @@ class HomePage(MethodView):
         pokespecialatk = retrieve_search.specialatk,
         pokespecialdef = retrieve_search.specialdef,
         pokespd = retrieve_search.speed,
-        poketype = retrieve_search.types,
+        poketype = retrieve_search.types.capitalize(),
         pokestrong = retrieve_search.strong,
         pokeweak = retrieve_search.weak,
         pokeimmuneto = retrieve_search.nodamageto,
         pokeimmunefrom = retrieve_search.nodamagefrom,
-        sprite = retrieve_search.sprite 
+        sprite = retrieve_search.sprite,
         )
+
 
 app.add_url_rule('/', view_func=HomePage.as_view('home_page'))
 

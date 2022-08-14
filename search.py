@@ -17,7 +17,7 @@ class PokeSearch:
             self.defense = content['stats'][2]['base_stat']
             self.specialatk = content['stats'][3]['base_stat']
             self.specialdef = content['stats'][4]['base_stat']
-            self.speed = content['stats'][5]['base_stat']
+            self.speed = content['stats'][5]['base_stat']   
             self.types = content['types'][0]['type']['name']
             self.sprite = content['sprites']['front_default']
             self.strong = self.__strong()
@@ -25,8 +25,6 @@ class PokeSearch:
             self.nodamageto = self.__nodamageto()
             self.nodamagefrom = self.__nodamagefrom()
 
-
-    
 
     def __get_pokemon(self):
 
@@ -40,6 +38,8 @@ class PokeSearch:
         response = requests.get(self.type_url + self.types)
         datatype = response.json()
         strongdata = datatype['damage_relations']['double_damage_to']
+
+
 
         strong = []
         strongclean = ""

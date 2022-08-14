@@ -9,24 +9,14 @@
 <div class="flexbox-container">
     <div class="pokedex-ball-intro">
         <h2>Pokedex</h2>
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/master-ball.png"/>
-        <br>
-        <br>
-        <br>
-        <p>Search for your favorite pokemon and get information about it!</p>
-    <br>
-    <br>
-    <br>
+        <img src="static/images/pokeballicon.png"/>
     </div>
-    <div class="stats">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+    <div class="info">
+    <p>Search for your favorite pokemon and get information about it!</p>
+    </div>
+</div>
+<div class="flexbox-container-2">
+    <div class="stats-sprite">
         <p> {{pokename}}</p>
         <p> Type: {{poketype}}</p>
         <p> HP: {{pokehp}} </p>
@@ -40,14 +30,20 @@
         <p>Super effective against: {{pokestrong}} </p>
         <p>Very weak against: {{pokeweak}}</p>
     </div>
-    <div class="display">
-            <img src="{{sprite}}"/>
-            <form action="/" method="post">
+    <div class="sprite">
+        <img src="{{sprite}}"/>
+        <div class="form">
+        <form action="/" method="post">
+        </div>
+        <div class="searchbar">
             {{pokeform.searchresult}}
-            <input type="submit", value="Get Pokemon", name="datapkmn" >
-            </form>
-    </div>
+        </div>
+        <div class="searchbutton">
+            <input type="submit", value="Get Pokemon", name="datapkmn">
+        </form>
         </div>
     </div>
 </div>
+</div>
+</body>
 </html>

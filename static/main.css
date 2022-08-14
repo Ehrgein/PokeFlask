@@ -1,57 +1,93 @@
 .flexbox-container{
   display: flex;
-  height: 800px;
-  align-items: center;
+  flex-direction: column;
+  height: 35px;
 
+}
+.html, body{
+  background-color: ghostwhite;
+  margin: 0px;
+  padding: 0px;
 }
 .pokedex-ball-intro{
   color: ghostwhite;
   background-color: red;
-  margin: 0;
-  padding: 0;
   float: left;
-  height: 30px;
-  width: 600px;
-  align-self: flex-start;
-}
-.pokedex-ball-intro p{
-  color: black;
-  margin: 0;
-  padding: 0;
-  float: left;
-  height: 30px;
-  width: 600px;
-  align-self: flex-start;
-}
-.pokedex-ball-intro h2{
-  width: 85px;
-  margin: 0;
-  float: left;
-}
+  height: 20px;
+  width: 1920px;
+  margin: 0px;
+  flex: 1 0 100%;
+  order:-1;
+} 
 .pokedex-ball-intro img{
-  align-self: flex-start;
+
+width: 34px;
+height: 34px;
+padding-left: 6px;
+
 }
-.pokedex-ball-intro p{
-  align-self: left;
-  font-size: 16px;
-  width: 450px;
-  margin: 15;
-  padding: 15;
+
+.pokedex-ball-intro h2{
+    margin: 0;
+    float: left;
+    padding: 0px;
 }
-.stats{
-  color:red;
-  font-size: 15px;;
+.info {
   align-self: center;
-  width: 300px;
-  height: 800px;
-  margin: 1.1;
-  padding: 1.1;
+}
+.info p{
+  margin: -29px;
+  height: 35px;
+  width: 500px;
+  align-content: flex-start;
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+}
+.flexbox-container-2{
+  display: flex;
+  flex-direction: row;
+  height: 600px;
 }
 
-.display{
-  width: 350px;
+.stats-sprite{ 
+  width: 50%;
+  height: 100vh;
+  background-color: rgb(241, 247, 241);
+  text-align: right;
+  color: white;
+  margin-top: 71px;
 }
 
-.display img{
-  width: 200px;
+.stats-sprite p:nth-child(1){
+
+ font-weight: bold;
+}
+
+.stats-sprite p{
+  color: rgb(0, 0, 0);
+  padding-right: 100px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 1px;
+}
+
+.sprite{
+  width: 50%;
+  color: green;
+  height: 100vh;
+}
+
+.sprite img{
+  padding-top: 186px;
+  padding-left: 11px;
+  height: 120px;
+  width: 120px;
+}
+
+.searchbutton{
+  
+  padding-top: 12px;
+  padding-left: 32px;
+
 }
