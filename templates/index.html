@@ -7,12 +7,15 @@
 </head>
 <body>
 <div class="flexbox-container">
-    <div class="pokedex-ball-intro">
-        <h2>Pokedex</h2>
-        <img src="static/images/pokeballicon.png"/>
-    </div>
+    <h2>Pokedex</h2>
+    <img src="static/images/pokeballicon.png"/>
     <div class="info">
-    <p>Search for your favorite pokemon and get information about it!</p>
+        <p>Search for your favorite pokemon and get information about it!</p>
+    </div>
+    <div class ="github">
+        <a href="https://github.com/Ehrgein">
+        <img src="static/images/github.png"/>
+        </a>
     </div>
 </div>
 <div class="flexbox-container-2">
@@ -36,14 +39,13 @@
         <form action="/" method="post">
         </div>
         <div class="searchbar">
-            {{pokeform.searchresult}}
+                {{pokeform.searchresult}}
         </div>
         <div class="searchbutton">
-            <input type="submit", value="Get Pokemon", name="datapkmn">
-        </form>
+        <input type="submit", value="Get Pokemon", name="datapkmn">
+    </form>
         </div>
     </div>
-</div>
 </div>
 </body>
 </html>

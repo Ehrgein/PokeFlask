@@ -1,7 +1,9 @@
 .flexbox-container{
   display: flex;
-  flex-direction: column;
-  height: 35px;
+  flex-direction: row;
+  height: 55px;
+  background-color: red;
+
 
 }
 .html, body{
@@ -11,7 +13,6 @@
 }
 .pokedex-ball-intro{
   color: ghostwhite;
-  background-color: red;
   float: left;
   height: 20px;
   width: 1920px;
@@ -19,31 +20,51 @@
   flex: 1 0 100%;
   order:-1;
 } 
-.pokedex-ball-intro img{
 
-width: 34px;
-height: 34px;
-padding-left: 6px;
+.flexbox-container img {
+
+padding-right: 400px;
+padding-left: 15px;
 
 }
-
-.pokedex-ball-intro h2{
+.flexbox-container h2{
+    
+    color: ghostwhite;
     margin: 0;
     float: left;
     padding: 0px;
+    font-size:45px;
 }
+
 .info {
-  align-self: center;
+    padding-left: 0px;
+    padding-right: 120px;
 }
+
 .info p{
-  margin: -29px;
+  margin: 12px;
   height: 35px;
-  width: 500px;
-  align-content: flex-start;
-  font-size: 16px;
+  font-size: 24px;
   color: white;
   font-weight: bold;
+  padding-top: -5px;
 }
+.github {
+
+    padding-left: 0px;
+    padding-top: 33px;
+    width: 100px;
+}
+.github img{
+
+    height: 56px;
+    margin-top: -34px;
+    width: auto;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+  
+
 .flexbox-container-2{
   display: flex;
   flex-direction: row;
@@ -54,13 +75,16 @@ padding-left: 6px;
   width: 50%;
   height: 100vh;
   background-color: rgb(241, 247, 241);
-  text-align: right;
+  text-align: end;
   color: white;
-  margin-top: 71px;
+  margin-top: 51px;
+  font-size: 17px;
+
 }
 
 .stats-sprite p:nth-child(1){
 
+ font-size: 24px;
  font-weight: bold;
 }
 
@@ -89,5 +113,19 @@ padding-left: 6px;
   
   padding-top: 12px;
   padding-left: 32px;
+}
 
+
+
+}
+
+.github{
+
+  width: 85;
+  padding-left: 20px;
+
+}
+
+.pokedex-ball-intro a{
+  width: 40px;
 }

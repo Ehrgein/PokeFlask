@@ -1,4 +1,3 @@
-import types
 from urllib import response
 import requests
 import json
@@ -14,12 +13,13 @@ app = Flask(__name__, static_folder="static")
 
 class PokeForm(Form):
     style={'style': 'font-size: 12px'}
+    
     searchresult = StringField("Search for a pokemon: ", default="ditto")
 
 class HomePage(MethodView):
 
-    @app.route("/", methods=["GET", "POST"])
-    def get():
+    @app.route("/", methods=["POST"])
+    def post():
 
         poke_form = PokeForm(request.form)
         newpoke = poke_form.searchresult.data
