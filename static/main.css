@@ -45,7 +45,7 @@ padding-left: 15px;
   margin: 12px;
   height: 35px;
   font-size: 24px;
-  color: white;
+  color: ghostwhite;
   font-weight: bold;
   padding-top: -5px;
 }
@@ -74,9 +74,9 @@ padding-left: 15px;
 .stats-sprite{ 
   width: 50%;
   height: 100vh;
-  background-color: rgb(241, 247, 241);
+  background-color: ghostwhite;
   text-align: end;
-  color: white;
+  color: ghostwhite;
   margin-top: 51px;
   font-size: 17px;
 
@@ -98,7 +98,6 @@ padding-left: 15px;
 
 .sprite{
   width: 50%;
-  color: green;
   height: 100vh;
 }
 
@@ -115,9 +114,6 @@ padding-left: 15px;
   padding-left: 32px;
 }
 
-
-
-}
 
 .github{
 

@@ -18,7 +18,7 @@ class PokeForm(Form):
 
 class HomePage(MethodView):
 
-    @app.route("/", methods=["POST"])
+    @app.route("/", methods=["GET","POST"])
     def post():
 
         poke_form = PokeForm(request.form)
