@@ -33,7 +33,6 @@ class HomePage(MethodView):
         newpoke = poke_form
         retrieve_search = PokeSearch(newpoke)
 
-
         return render_template('pokedex.html',pokeform=poke_form.lower(),
         namepokemonbystr = retrieve_search.pokemon.capitalize(),
         namepokemonbyid=retrieve_search.pokename.capitalize(),

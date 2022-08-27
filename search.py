@@ -28,7 +28,6 @@ class PokeSearch:
             self.nodamageto = self.__nodamageto()
             self.nodamagefrom = self.__nodamagefrom()
 
-
     def __get_pokemon(self):
 
             response = requests.get(self.base_url + self.pokemon)
