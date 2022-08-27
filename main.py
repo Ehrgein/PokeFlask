@@ -6,28 +6,39 @@ from flask.views import MethodView
 from flask import Flask, render_template, request
 from wtforms import Form, StringField, SubmitField, validators
 from search import PokeSearch
+import mysql.connector
+from datetime import datetime
+
+db = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="asdwow123",
+    database="pokedb"
+    )
+
 
 app = Flask(__name__, static_folder="static")
 
 
 
-class PokeForm(Form):
-    style={'style': 'font-size: 12px'}
-    
-    searchresult = StringField("Search for a pokemon: ", default="ditto")
 
 class HomePage(MethodView):
 
     @app.route("/", methods=["GET","POST"])
-    def post():
+    def get():
 
-        poke_form = PokeForm(request.form)
-        newpoke = poke_form.searchresult.data
+
+
+        poke_form = request.form["nm"]
+        newpoke = poke_form
         retrieve_search = PokeSearch(newpoke)
 
-        print(newpoke)
-        return render_template('index.html',pokeform=poke_form,
-        pokename=newpoke.capitalize(),
+
+        return render_template('pokedex.html',pokeform=poke_form.lower(),
+        namepokemonbystr = retrieve_search.pokemon.capitalize(),
+        namepokemonbyid=retrieve_search.pokename.capitalize(),
+        pokeid = retrieve_search.pokeid,
+        generation = retrieve_search.generation,
         pokehp=retrieve_search.hp,
         pokeatk = retrieve_search.attack,
         pokedef = retrieve_search.defense,
@@ -42,9 +53,15 @@ class HomePage(MethodView):
         sprite = retrieve_search.sprite,
         )
 
+    def save_pokemon():
+        print("pepe")
+
+   
+
 
 app.add_url_rule('/', view_func=HomePage.as_view('home_page'))
 
+app.add_url_rule('/caught', view_func=HomePage.as_view('catch_em_all'))
 
 app.run(debug=True)
 

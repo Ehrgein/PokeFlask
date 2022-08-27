@@ -10,8 +10,11 @@ class PokeSearch:
     type_url = "https://pokeapi.co/api/v2/type/"
 
     def __init__(self, pokemon):
-            self.pokemon = pokemon
+            self.pokemon = pokemon.lower()
             content = self.__get_pokemon()
+            self.pokeid = content['game_indices'][-1]['game_index']
+            self.pokename = content['forms'][0]['name']
+            self.generation = self.__getgeneration()
             self.hp = content['stats'][0]['base_stat']
             self.attack = content['stats'][1]['base_stat']
             self.defense = content['stats'][2]['base_stat']
@@ -32,14 +35,29 @@ class PokeSearch:
             content = response.json()
             return content
 
+
+    def __getgeneration(self):
+
+        gens = ['First', 'Second', 'Third', 'Fourth',
+        'Fifth']
+        if 1 <= self.pokeid  <= 151:
+            return gens[0]
+        elif 152 <= self.pokeid <= 251:
+            return gens[1]
+        elif 252 <= self.pokeid <= 386:
+            return gens[2]
+        elif 387 <= self.pokeid <= 493:
+            return gens[3]
+        elif 494 <= self.pokeid <= 649:
+            return gens[4]
+
+
     def __strong(self):        
         #type_req = open("./weakstrong.json", encoding="utf-8")
 
         response = requests.get(self.type_url + self.types)
         datatype = response.json()
         strongdata = datatype['damage_relations']['double_damage_to']
-
-
 
         strong = []
         strongclean = ""
@@ -88,7 +106,6 @@ class PokeSearch:
             weak.append(element['name'])
             weakclean= ' , '.join([str(item)for item in weak])
         return weakclean
-
 
 
 

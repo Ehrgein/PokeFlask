@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="flexbox-container-2">
+    <div class="stats-sprite">
+        <p> {{namepokemonbyid}} # {{pokeid}}</p>
+        <p> {{generation}} generation</p> 
+        <p> Type: {{poketype}}</p>
+        <p> HP: {{pokehp}} </p>
+        <p> Attack: {{pokeatk}} </p>
+        <p> Defense: {{pokedef}}</p>
+        <p>Special Attack: {{pokespecialatk}}</p>
+        <p>Special Defense: {{pokespecialdef}} </p>
+        <p>Speed: {{pokespd}} </p>
+        <p>Does no damage to: {{pokeimmuneto}} </p>
+        <p>Receives no damage from: {{pokeimmunefrom}}</p>
+        <p>Super effective against: {{pokestrong}} </p>
+        <p>Very weak against: {{pokeweak}}</p>
+    </div>
+    <div class="sprite">
+        <img src="{{sprite}}"/>
+        <div class="form">
+        <form action="#" method="post">
+        </div>
+        <div class="searchbutton">
+        <p><input type="text" name="nm" value="ditto" /></p>
+        <input type="submit", value="Get Pokemon", name="datapkmn">
+        </div>
+        <div class="savepokemon">
+        <label>
+
+        </label>
+        </div>
+    </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
