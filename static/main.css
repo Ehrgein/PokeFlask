@@ -1,7 +1,7 @@
 .flexbox-container{
   display: flex;
   flex-direction: row;
-  height: 55px;
+  height: 75px;
   background-color: red;
 
 
@@ -68,7 +68,8 @@ padding-left: 15px;
 .flexbox-container-2{
   display: flex;
   flex-direction: row;
-  height: 600px;
+  height: 580px;
+  margin-top: 50px;
 }
 
 .stats-sprite{ 
@@ -76,8 +77,8 @@ padding-left: 15px;
   height: 100vh;
   background-color: ghostwhite;
   text-align: end;
-  color: ghostwhite;
-  margin-top: 51px;
+  color: rgb(0, 0, 0);
+  margin-top: 28px;
   font-size: 17px;
 
 }
@@ -88,40 +89,131 @@ padding-left: 15px;
  font-weight: bold;
 }
 
-.stats-sprite p{
+.sprite p{
   color: rgb(0, 0, 0);
   padding-right: 100px;
   padding-top: 0px;
   padding-bottom: 0px;
-  margin-top: 1px;
+  margin-top: -6px;
+}
+
+.weaknesses{
+  display: none;
+}
+
+
+.advantages p{
+  color: rgb(0, 0, 0);
+  padding-right: 100px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: -6px;
 }
 
 .sprite{
-  width: 50%;
-  height: 100vh;
+  display: flex;
+  justify-content: center;
+  border-radius: 12px;
 }
 
 .sprite img{
-  padding-top: 186px;
-  padding-left: 11px;
-  height: 120px;
-  width: 120px;
+  height: 300px;
+  width: 300px;
+  background: white;
+  border-radius: 6px;
+  margin-top: 4px;
 }
-
-.searchbutton{
-  
-  padding-top: 12px;
-  padding-left: 32px;
-}
-
 
 .github{
 
   width: 85;
   padding-left: 20px;
-
 }
 
 .pokedex-ball-intro a{
   width: 40px;
+}
+
+.mainsearch-flexbox{
+  display: flex;
+  justify-content: center;
+  margin-top: 206px;
+}
+
+.searchbutton input[type=text]{
+
+  width:600px;
+  outline: none;
+  border: none;
+  padding: 10px 10px;
+  border-radius:14px;
+  box-shadow: rgb(0 0 0 / 30%) 0 0 10px 2px;
+  font-size: 22px;
+  box-sizing: border-box;
+  text-align: center;
+  background: ghostwhite;
+
+}
+
+.searchbutton input[type=submit] {
+      background-repeat: no-repeat;
+      border: 0;
+      height: 51px;
+      width: 51px;
+      background-color: rgb(240, 86, 14);
+      float: right;
+      background-image: url(https://cdn-icons-png.flaticon.com/512/61/61088.png);
+      background-size: 46px;
+      text-indent: -9999px;
+      margin-left: 13px;
+      margin-bottom: 58px;
+      border-radius: 9px;
+      background-position: center;
+}
+.advantages p:nth-child(1){
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.advantages p:nth-child(4){
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+.stats-sprite table{
+
+  border: 3px solid #A040A0;
+  width: calc(100% * 45/255);
+  height: 20px;
+  width: 500px;
+  border-radius: 10px;
+  margin-left: 275px;
+  margin-top: 86px;
+  color: black;
+  
+}
+
+.stats-sprite tr{
+  background: #e5eee9;
+}
+
+.stats.sprite th:first-child{
+  text-align: center;
+  background: #99FFCC;
+  padding-right: 11px;
+
+}
+
+.resizeimg {
+  height: 250px;
+  width: 250px;
+  background: white;
+  border-radius: 6px;
+  margin-top: 4px;
+}
+
+.mainsprite {
+  height: 100px;
+  width: 100px;
 }

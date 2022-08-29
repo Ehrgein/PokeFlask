@@ -18,7 +18,20 @@
         </a>
     </div>
 </div>
+{% block content %}{% endblock %}
+<div class="mainsearch-flexbox">
+    <div class="form" onclick="display=none">
+        <form action="#" method="post">
+        <div class="searchbutton">
+        <input type="text" name="name" defaultvalue="ditto" placeholder="Enter your desired pokemon by name or id"/>
+        <input type="submit">
+        </div>
+        </form>
+    </div>
+</div>
+</div>
 </body>
 </html>
-{% block content %} {% endblock %}
+
+
 

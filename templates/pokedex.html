@@ -1,38 +1,140 @@
 {% extends "base.html" %}
-
 {% block content %}
 <div class="flexbox-container-2">
     <div class="stats-sprite">
-        <p> {{namepokemonbyid}} # {{pokeid}}</p>
-        <p> {{generation}} generation</p> 
-        <p> Type: {{poketype}}</p>
-        <p> HP: {{pokehp}} </p>
-        <p> Attack: {{pokeatk}} </p>
-        <p> Defense: {{pokedef}}</p>
-        <p>Special Attack: {{pokespecialatk}}</p>
-        <p>Special Defense: {{pokespecialdef}} </p>
-        <p>Speed: {{pokespd}} </p>
-        <p>Does no damage to: {{pokeimmuneto}} </p>
-        <p>Receives no damage from: {{pokeimmunefrom}}</p>
-        <p>Super effective against: {{pokestrong}} </p>
-        <p>Very weak against: {{pokeweak}}</p>
+        <table style="background-color: {{pokebg}}; border: 4px solid {{pokeborder}}; padding: 2px; border-spacing:3px">
+        <tbody style="background-color : {{pokeborder}}">
+        <div class="stat">
+            <th  style="text-align: center" colspan="2"> Stats </th>
+        </div>
+            <tr>
+            <th> HP: {{pokehp}} </th>
+            <td style="width:255px">
+                <div class="statbar" style="background-color: #09ff00; border: 1px solid #11da0aa2; width: calc(100% * {{pokehp}}/255)"></div>
+            </td>
+            </tr>
+            <tr>
+            <th> Attack: {{pokeatk}} </th>
+            <td style="width:255px">
+                <div class="statbar" style="background-color: #ff4800fb; border: 1px solid #A60000; width: calc(100% * {{pokeatk}}/255)"></div>
+            </td>
+            </tr>
+            <tr>    
+            <th> Defense: {{pokedef}}</th>
+            <td style="width:255px">
+                <div class="statbar" style="background-color: #fffb0a; border: 1px solid #f77f10; width: calc(100% * {{pokedef}}/255)"></div>
+            </td>
+            </tr>
+            <tr>
+            <th>Special Attack: {{pokespecialatk}}</th>
+            <td style="width:255px">
+                <div class="statbar" style="background-color: #ff02ddfb; border: 1px solid #aa0e95; width: calc(100% * {{pokespecialatk}}/255)"></div>
+            </tr>
+            <tr>
+            <th>Special Defense: {{pokespecialdef}} </th>
+            <td style="width:255px">
+                <div class="statbar" style="background-color: #0a2ffffb; border: 1px solid #509cf3; width: calc(100% * {{pokespecialdef}}/255)"></div>
+            </tr>
+            <tr>
+            <th>Speed: {{pokespd}} </th>
+            <td style="width:255px">
+                <div class="statbar" style="background-color: #ffa0fafb; border: 1px solid #fd8dee; width: calc(100% * {{pokespd}}/255)"></div>
+            </tr>
+        </tbody>
+        </table>
     </div>
-    <div class="sprite">
-        <img src="{{sprite}}"/>
-        <div class="form">
-        <form action="#" method="post">
-        </div>
-        <div class="searchbutton">
-        <p><input type="text" name="nm" value="ditto" /></p>
-        <input type="submit", value="Get Pokemon", name="datapkmn">
-        </div>
-        <div class="savepokemon">
-        <label>
-            
-        </label>
-        </div>
-    </form>
-        </div>
+<div class="sprite" style="background: {{pokebg}}; border: 3px solid {{pokeborder}}; padding:6px;">
+    <table class="innerborder" style="background:{{innerborder}}; padding: 5px; border-radius: 12px; vertical-align: top;">
+        <tbody style="vertical-align: top;">
+            <th style="background:#ffff; border-radius: 12px; width:75%; height: 1%;">
+                <big>
+                    <b>{{namepokemonbyid}}</b>
+                </big>
+            </th>
+            <th style="background:#ffff; border-radius: 12px; width: 25%; height: 1%">
+                <big>
+                <b> # {{pokeid}}</b>
+                </big>
+            </th>
+            <tr style="height:1%; width: 100%;">
+                <td  colspan="2" style="height:1%;">
+                <img src="{{sprite}}">
+                </td>
+            </tr>
+                <td colspan="2" style="padding:10px; height: 1%; text-align: center;;">
+                    <b>
+                        Types
+                    </b>
+                </td>
+                <tr colspan = "2" span style="background-color: white; height:10%; width:100%; border-radius: 12px; padding:2px; border-spacing: 4px;">
+                    <td colspan = "2" style="border-radius: 12px; width:100%; height: 7%; text-align: center; font-size:85%; padding-top:5px; ">
+                        <b style="text-transform: uppercase; background-color:{{pokebg}}; text-transform: uppercase; font-size: 16px; border-radius: 12px;padding-top: 2px;padding-left: 5px;
+                        padding-right: 5px; padding-bottom: 2px; margin-left: 20px; margin-right: 5px;">
+                            <span style="color: #FFFF">
+                            {{poketype}}
+                            </span>
+                        </b>
+
+                            <b style="background-color: {{twotypeborder}}; text-transform: uppercase; font-size: 16px; border-radius:12px; margin-left: 20px; margin-right: 5px;">
+                                <span style="color: #FFFF">
+                                    {{poketypetwo}}
+                                </span>
+                            </b>
+                        </div
+                    </td>
+                </tr>
+                <td colspan="2" style="padding:10px; height: 1%; text-align: center;;">
+                    <b>
+                        Abilities
+                    </b>
+                </td>
+                <tr colspan = "2" span style="background-color: white; height:10%; width:100%; border-radius: 12px; padding:2px; border-spacing: 4px;">
+                    <td colspan = "2" style="border-radius: 12px; width:100%; height: 7%; text-align: center; font-size:85%; padding-top:5px; ">
+                        <b style="text-transform: capitalize; font-size: 20px; border-radius: 12px;padding-top: 2px;padding-left: 5px;
+                        padding-right: 5px; padding-bottom: 2px; margin-left: 20px; margin-right: 5px;">
+                            {{abilityone}}
+                        </b>
+                        <b style="text-transform: capitalize; font-size: 20px; border-radius: 12px;padding-top: 2px;padding-left: 5px;
+                        padding-right: 5px; padding-bottom: 2px; margin-left: 20px; margin-right: 5px;">
+                           {{abilitytwo}}
+                        </b>
+                    </td>
+                </tr>
+                <td colspan="2" style="padding:10px; height: 1%; text-align: center;;">
+                    <b>
+                        Strong against (2X)
+                    </b>
+                </td>
+                <tr colspan = "2" span style="background-color: white; height:10%; width:100%; border-radius: 12px; padding:2px; border-spacing: 4px;">
+                    <td colspan = "2" style="border-radius: 12px; width:100%; height: 7%; text-align: center; font-size:85%; padding-top:5px; ">
+                        <b style="text-transform: capitalize; font-size: 20px; border-radius: 12px;padding-top: 2px;padding-left: 5px;
+                        padding-right: 5px; padding-bottom: 2px; margin-left: 20px; margin-right: 5px;">
+                            <img src="static/images/{{weakone}}.png" style="height:24px; width:24px;">
+                            <img src="static/images/{{weaktwo}}.png" style="height:24px; width:24px;">
+                            <img src="static/images/{{weakthree}}.png" style="height:24px; width:24px;">
+                        </b>
+                    </td>
+                </tr>
+                
+        </tbody>
+    </table>
+</div>
+    
+    <tbody>
+    </table>
+    </tbody>
+    </div>
+<div class="weaknesses">
+        <table>
+        <th> Weaknesses</th>
+        <td>{{pokeweak}}</td>
+        <th>Does no damage to: {{pokeimmuneto}} </th>
+        <th> Strengths </th>
+        <th>Receives no damage from: {{pokeimmunefrom}}</th>
+        <th>Super effective against: {{pokestrong}} </th>
+        <th> Type: {{poketype}}</th>
+        </table>
     </div>
 </div>
+
 {% endblock %}
