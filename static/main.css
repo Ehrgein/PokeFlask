@@ -1,10 +1,8 @@
 .flexbox-container{
   display: flex;
   flex-direction: row;
-  height: 75px;
-  background-color: red;
-
-
+  height: 55px;
+  background: red;
 }
 .html, body{
   background-color: ghostwhite;
@@ -70,18 +68,10 @@ padding-left: 15px;
   flex-direction: row;
   height: 580px;
   margin-top: 50px;
+  width: 1150px
 }
 
-.stats-sprite{ 
-  width: 50%;
-  height: 100vh;
-  background-color: ghostwhite;
-  text-align: end;
-  color: rgb(0, 0, 0);
-  margin-top: 28px;
-  font-size: 17px;
 
-}
 
 .stats-sprite p:nth-child(1){
 
@@ -155,6 +145,7 @@ padding-left: 15px;
 
 }
 
+
 .searchbutton input[type=submit] {
       background-repeat: no-repeat;
       border: 0;
@@ -170,40 +161,25 @@ padding-left: 15px;
       border-radius: 9px;
       background-position: center;
 }
-.advantages p:nth-child(1){
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.advantages p:nth-child(4){
-  font-size: 24px;
-  font-weight: bold;
-}
-
 
 .stats-sprite table{
 
-  border: 3px solid #A040A0;
-  width: calc(100% * 45/255);
-  height: 20px;
-  width: 500px;
-  border-radius: 10px;
   margin-left: 275px;
   margin-top: 86px;
   color: black;
   
 }
 
-.stats-sprite tr{
-  background: #e5eee9;
+.table td, th{
+  padding: 0.75rem;
+  vertical-align: top;
 }
 
-.stats.sprite th:first-child{
-  text-align: center;
-  background: #99FFCC;
-  padding-right: 11px;
-
+.stats-sprite th{
+  text-align: end;
+  background: ghostwhite;
 }
+
 
 .resizeimg {
   height: 250px;
@@ -216,4 +192,72 @@ padding-left: 15px;
 .mainsprite {
   height: 100px;
   width: 100px;
+}
+
+.thirdtype[src="static/images/.png"] {
+  display:none;
+}
+
+.evoone {
+  height: 650px; 
+  width: 650px;
+}
+
+.evoone img{
+
+  height: 124px; 
+  width: 124px;
+}
+
+.evoone img{
+
+  height: 124px; 
+  width: 124px;
+}
+.sideevos img{
+
+  height: 124px; 
+  width: 124px;
+
+}
+
+.evoone img[src=""]{
+display: none;
+}
+.sideevos img[src=""]{
+  display: none;
+}
+  
+
+.allstats{
+  color: red;
+}
+
+.statbar{
+  text-align: end;
+  border-radius: 12px;
+  animation: progress 750ms ease-in 1;
+}
+
+.evochain-flexbox{
+  display:flex;
+  justify-content: center;
+}
+.statbar span{
+  color: white;
+  font-weight: bold;
+}
+
+.evos img{
+  height:120px;
+  width: 120px;
+}
+.evos img[src=""]{
+  display: none;
+}
+
+@keyframes progress{
+  from {
+    width: 0;
+  }
 }

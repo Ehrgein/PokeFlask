@@ -8,12 +8,6 @@ from search import PokeSearch
 import mysql.connector
 from datetime import datetime
 
-db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="asdwow123",
-    database="pokedb"
-    )
 
 
 
@@ -37,10 +31,6 @@ class HomePage(MethodView):
             retrieve_search = PokeSearch(newpoke)
 
             return render_template('pokedex.html',pokeform=poke_form.lower(),
-            namepokemonbystr = retrieve_search.pokemon.capitalize(),
-            namepokemonbyid=retrieve_search.pokename.capitalize(),
-            pokeid = retrieve_search.pokeid,
-            generation = retrieve_search.generation,
             pokehp=retrieve_search.hp,
             pokeatk = retrieve_search.attack,
             pokedef = retrieve_search.defense,
@@ -55,15 +45,42 @@ class HomePage(MethodView):
             pokeimmuneto = retrieve_search.nodamageto,
             pokeimmunefrom = retrieve_search.nodamagefrom,
             sprite = retrieve_search.sprite,
-            pokebg = retrieve_search.bgcolour,
-            pokeborder = retrieve_search.bordercolour,
-            innerborder = retrieve_search.innerborder,
-            twotypeborder = retrieve_search.typetwoborder,
+            firstcolour = retrieve_search.colourone,
+            secondcolour = retrieve_search.colourtwo,
+            twotypecolour = retrieve_search.typetwocolour,
             abilityone = retrieve_search.abilityone,
             abilitytwo = retrieve_search.abilitytwo,
             weakone = retrieve_search.weakone,
             weaktwo = retrieve_search.weaktwo,
-            weakthree = retrieve_search.weakthree,
+            emptyskill = retrieve_search.sameskill,
+            weakthird = retrieve_search.weakthree,
+            evolvefirstform = retrieve_search.firstform,
+            evolvesecondform = retrieve_search.secondform,
+            evolvelastform= retrieve_search.lastform,
+            evolvefourthform = retrieve_search.fourthform, 
+            spriteevoone = retrieve_search.spriteevoone,
+            spriteevotwo = retrieve_search.spriteevotwo,
+            spriteevothree = retrieve_search.spriteevothree,
+            spriteevofour = retrieve_search.spritefourthform,
+            newspeciesid = retrieve_search.newspeciesid,
+            newname = retrieve_search.newname.capitalize(),
+            secondsideevo = retrieve_search.secondside,
+            secondevosprite = retrieve_search.getsecondevosprite,
+            allspecieslist = retrieve_search.allspeciesdata,
+            listofevolvl = retrieve_search.listofevolvl,
+            firsttrigger = retrieve_search.firsttrigger,
+            secondtrigger = retrieve_search.secondtrigger,
+            thirdtrigger = retrieve_search.thirdtrigger,
+            firsttriggervalue = retrieve_search.firsttriggervalue,
+            secondtriggervalue = retrieve_search.secondtriggervalue,
+            tradeitems = retrieve_search.gettradeitems,
+            getspecies = retrieve_search.getspecies,
+            sideevocheck = retrieve_search.sideevocheck,
+            ifbranch = retrieve_search.twobranchfirst,
+            twobranchspriteone = retrieve_search.twobranchspriteone,
+            twobranchspritetwo = retrieve_search.twobranchspritetwo,
+            twobranchtrigger = retrieve_search.twobranchtrigger,
+            twobranchtriggervalue = retrieve_search.twobranchtriggervalue
             )
 
 
