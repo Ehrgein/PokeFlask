@@ -504,6 +504,8 @@ class PokeSearch:
 
         if noevolvedata == []:
             return "This pokemon doesn't have a known evolution"
+        else:
+            return ""
     
     def __secondside(self):
 
@@ -719,7 +721,10 @@ class PokeSearch:
         if evolen == 2:
             return ""
         if self.secondtrigger == 'Level +':
-            return str(self.listofevolvl[1])
+            try:
+                return str(self.listofevolvl[1])
+            except IndexError:
+                return ""
         elif self.secondtrigger == 'Use ':
             newitem = str(self.listofitems[0]['name'])
             newitem2 = newitem.replace('-', ' ').title()
