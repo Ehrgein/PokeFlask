@@ -1,6 +1,4 @@
-from cgi import test
-from inspect import Attribute
-from ssl import ALERT_DESCRIPTION_ACCESS_DENIED
+
 from types import NoneType
 import types
 from urllib import response
@@ -68,7 +66,7 @@ class PokeSearch:
             self.spriteevotwo = self.__spriteevotwo()
             self.spriteevothree = self.__spriteevothree()
             self.spritefourthform = self.__spriteevofour()
-            #self.noevolve = self.__noevolve()
+            self.noevolve = self.__noevolve()
             self.secondside = self.__secondside()
             self.getsecondevosprite = self.__getsideevosprite()
             self.listofevolvl = self.__getlevels()
@@ -498,6 +496,14 @@ class PokeSearch:
             return spritebyidsideread['sprites']['other']['official-artwork']['front_default']
         else: 
             return ""
+        
+    def __noevolve(self):
+
+        checknoevolve = self.evochainjson
+        noevolvedata = checknoevolve['chain']['evolves_to']
+
+        if noevolvedata == []:
+            return "This pokemon doesn't have a known evolution"
     
     def __secondside(self):
 
@@ -686,7 +692,7 @@ class PokeSearch:
         for val in lst:
             if val != None:
                 newlst.append(val)
-        return newlst[1]['name']
+        return newlst
 
     def __firsttriggervalue(self):
 

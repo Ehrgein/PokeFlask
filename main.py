@@ -62,6 +62,7 @@ class HomePage(MethodView):
             spriteevotwo = retrieve_search.spriteevotwo,
             spriteevothree = retrieve_search.spriteevothree,
             spriteevofour = retrieve_search.spritefourthform,
+            noevolve = retrieve_search.noevolve,
             newspeciesid = retrieve_search.newspeciesid,
             newname = retrieve_search.newname.capitalize(),
             secondsideevo = retrieve_search.secondside,
